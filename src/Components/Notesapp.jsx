@@ -8,8 +8,64 @@ function Notesapp() {
         <div className="container">
              <div className="side-bar">
                 <h1 className="sidebar-text">Pocket Notes</h1>
-                <img className="addnotes-btn" src={addNotesButton} alt="" srcset="" />
+
+            <div class="scroll">
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+                <div className='notes-title-box'>
+                    <h1 className='circle'>MN</h1>
+                    <h1 className='notes-title'>My Notes</h1>
+                </div>
+            </div>
+
             </div>   
+                <img className="addnotes-btn" src={addNotesButton} alt="" srcset="" />
 
         <div className="notes-section">
             <img className='bg-img' src={backgroundimg} alt="" />
