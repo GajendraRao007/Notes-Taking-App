@@ -1,11 +1,10 @@
 import './App.css'
+import Notesapp from './Components/Notesapp'
 
 function App() {
   return (
     <>
-      <div>
-        
-      </div>
+      <Notesapp />
     </>
   )
 }
