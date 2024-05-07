@@ -3,6 +3,17 @@
   background-color: #DAE5F5;
 }
 
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2F2F2FBF;
+  z-index: 10; 
+}
+
+
 .side-bar {
   width: 400px;
   height: 99.5vh;
@@ -114,4 +125,122 @@
 ::-webkit-scrollbar-thumb {
   background: #FFFFFF; 
   border-radius: 5.5px;
+}
+
+
+.pop-up{
+  width: 500px;
+  background-color: white;
+  height: 200px;
+  padding: 20px;
+  border-radius: 6px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12; 
+}
+
+
+.popup-title{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+label{
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.color-title{
+  font-size: 22px;
+  font-weight: 500;
+  margin-right: 25px;
+}
+
+.input-groupname{
+  width: 300px;
+  border-radius: 22px;
+  border: 2px solid #CCCCCC;
+  padding: 10px;
+  margin-left: 30px;
+  outline: none;
+}
+
+::placeholder{
+  font-size: 18px;
+}
+
+.color-box{
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.purple{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #B38BFA;
+  border: none;
+  cursor: pointer;
+}
+
+.pink{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FF79F2;
+  border: none;
+  cursor: pointer;
+}
+
+.cyan{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #43E6FC;
+  border: none;
+  cursor: pointer;
+}
+
+.orange{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F19576;
+  border: none;
+  cursor: pointer;
+}
+
+.darkblue{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #0047FF;
+  border: none;
+  cursor: pointer;
+}
+
+.lightblue{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #6691FF;
+  border: none;
+  cursor: pointer;
+}
+
+.create-btn{
+  width: 120px;
+  height: 30px;
+  background-color: #001F8B;
+  font-size: 18px;
+  color: white;
+  border-radius: 11px;
+  cursor: pointer;
+  float: right;
+  margin-top: 30px;
 }
