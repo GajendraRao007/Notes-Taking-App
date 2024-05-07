@@ -81,9 +81,15 @@
 .notes-title-box {
   display: flex;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   padding-left: 50px;
   margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.notes-title-box:hover{
+  background-color: #2F2F2F2B;
 }
 
 .circle {
