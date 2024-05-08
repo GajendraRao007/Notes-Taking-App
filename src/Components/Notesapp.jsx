@@ -2,6 +2,7 @@ import addNotesButton from '../Images/button.png';
 import backgroundimg from '../Images/bg.png';
 import lockimg from '../Images/lock.png';
 import sendimg from '../Images/Vector.png';
+import disableimg from '../Images/disable.png';
 import bulletimg from '../Images/bullet.png';
 import { useState } from 'react';
 
@@ -15,7 +16,9 @@ function Notesapp() {
     const [groupContent, setGroupContent] = useState({});
     const [noteText, setNoteText] = useState("");
     const [selectedGroup, setSelectedGroup] = useState(null);
-    const [isGroupClicked, setIsGroupClicked] = useState(false);
+    const [hideHome, sethideHome] = useState(false);
+    const [showSend, setShowSend] = useState(false);
+    const [cursorStyle, setCursorStyle] = useState('none');
 
     const groupTitle = (e) => {
         setTitle(e.target.value);
@@ -26,7 +29,7 @@ function Notesapp() {
         setBgOverlay(true);
     }
 
-    function handleColorChange(color) {
+    function colorChange(color) {
         setSelectedColor(color);
     }
 
@@ -51,20 +54,29 @@ function Notesapp() {
         }
     }
 
-    function handleGroupClick(groupTitle) {
+    function groupClick(groupTitle) {
         setSelectedGroup(groupTitle);
-        setIsGroupClicked(true);
+        sethideHome(true);
+    }
+
+    function notesTextarea(e) {
+        const newText = e.target.value.trim();
+        setCursorStyle(newText ? 'pointer' : 'none');
+        setShowSend(newText !== "");
+        setNoteText(e.target.value);
+
     }
 
     return (
         <>
             <div className="container">
+
                 <div className="side-bar">
                     <h1 className="sidebar-text">Pocket Notes</h1>
 
                     <div className="scroll">
                         {groups.map((group, index) => (
-                            <div key={index} className='notes-title-box' onClick={() => handleGroupClick(group.title)}>
+                            <div key={index} className='notes-title-box' onClick={() => groupClick(group.title)}>
                                 <h1 className='circle' style={{ backgroundColor: group.color }}>{group.title.split(' ').map(word => word.charAt(0)).join('').slice(0, 2).toUpperCase()}</h1>
                                 <h1 className='notes-title'>{group.title}</h1>
                             </div>
@@ -73,7 +85,7 @@ function Notesapp() {
                 </div>
                 <img className="addnotes-btn" onClick={addButton} src={addNotesButton} alt="" srcSet="" />
 
-                {isGroupClicked ? null : (
+                {hideHome ? null : (
                     <div className="home-section">
                         <img className='bg-img' src={backgroundimg} alt="" />
                         <h1 className='notes-section-text'>Pocket Notes</h1>
@@ -85,10 +97,11 @@ function Notesapp() {
                         </div>
                     </div>
                 )}
+
                 {groups.map((group, index) => (
                     <div key={index} className='notes-section' style={{ display: selectedGroup === group.title ? 'block' : 'none' }}>
                         <div className='header'>
-                            <h1 className='header-circle'>{group.title.split(' ').slice(0, 2).map(word => word.charAt(0)).join('').toUpperCase()}</h1>
+                            <h1 className='circle' style={{ backgroundColor: group.color }}>{group.title.split(' ').map(word => word.charAt(0)).join('').slice(0, 2).toUpperCase()}</h1>
                             <h1 className='notes-title'>{group.title}</h1>
                         </div>
 
@@ -108,8 +121,13 @@ function Notesapp() {
                         </div>
 
                         <div className='notes-inputbox'>
-                            <textarea className='input-notes' value={noteText} onChange={(e) => setNoteText(e.target.value)} placeholder='Enter your text here...........' />
-                            <img className='addbtn' onClick={addNote} src={sendimg} alt="" srcSet="" />
+                            <textarea className='input-notes' value={noteText} onChange={notesTextarea} placeholder='Enter your text here...........' />
+
+                            {showSend ? (
+                                <img className='addbtn' onClick={addNote} src={sendimg} />
+                            ) : (
+                                <img className='addbtn' src={disableimg} style={{ cursor: 'none' }} />
+                            )}
                         </div>
                     </div>
                 ))}
@@ -122,12 +140,12 @@ function Notesapp() {
                             <input className='input-groupname' onChange={groupTitle} type="text" placeholder='Enter group name' />
                             <div className='color-box'>
                                 <h1 className='color-title'>Choose colour</h1>
-                                <button className='purple' onClick={() => handleColorChange("#B38BFA")}></button>
-                                <button className='pink' onClick={() => handleColorChange("#FF79F2")}></button>
-                                <button className='cyan' onClick={() => handleColorChange("#43E6FC")}></button>
-                                <button className='orange' onClick={() => handleColorChange("#F19576")}></button>
-                                <button className='darkblue' onClick={() => handleColorChange("#0047FF")}></button>
-                                <button className='lightblue' onClick={() => handleColorChange("#6691FF")}></button>
+                                <button className='purple' onClick={() => colorChange("#B38BFA")}></button>
+                                <button className='pink' onClick={() => colorChange("#FF79F2")}></button>
+                                <button className='cyan' onClick={() => colorChange("#43E6FC")}></button>
+                                <button className='orange' onClick={() => colorChange("#F19576")}></button>
+                                <button className='darkblue' onClick={() => colorChange("#0047FF")}></button>
+                                <button className='lightblue' onClick={() => colorChange("#6691FF")}></button>
                             </div>
                             <button className='create-btn' onClick={createGroup}>Create</button>
                         </div>
