@@ -147,7 +147,9 @@ function Notesapp() {
                                 <button className='darkblue' onClick={() => colorChange("#0047FF")}></button>
                                 <button className='lightblue' onClick={() => colorChange("#6691FF")}></button>
                             </div>
+                            <div className='btnbox'>
                             <button className='create-btn' onClick={createGroup}>Create</button>
+                            </div>
                         </div>
                     </div>
                 )}
