@@ -11,12 +11,12 @@
   width: 100%;
   height: 100%;
   background-color: #2F2F2FBF;
-  z-index: 10; 
+  z-index: 10;
 }
 
 
 .side-bar {
-  width: 541px !important;
+  width: 541px;
   height: 99.5vh;
   overflow: hidden;
   background-color: white;
@@ -43,7 +43,7 @@
 
 .notes-section {
   width: 100%;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -88,7 +88,7 @@
   cursor: pointer;
 }
 
-.notes-title-box:hover{
+.notes-title-box:hover {
   background-color: #2F2F2F2B;
 }
 
@@ -124,17 +124,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #D9D9D9; 
+  background: #D9D9D9;
   border-radius: 5.5px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: #FFFFFF; 
+  background: #FFFFFF;
   border-radius: 5.5px;
 }
 
 
-.pop-up{
+.pop-up {
   width: 500px;
   background-color: white;
   height: 200px;
@@ -145,28 +145,28 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 12; 
+  z-index: 12;
 }
 
 
-.popup-title{
+.popup-title {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
-label{
+label {
   font-size: 22px;
   font-weight: 500;
 }
 
-.color-title{
+.color-title {
   font-size: 22px;
   font-weight: 500;
   margin-right: 25px;
 }
 
-.input-groupname{
+.input-groupname {
   width: 300px;
   border-radius: 22px;
   border: 2px solid #CCCCCC;
@@ -175,17 +175,17 @@ label{
   outline: none;
 }
 
-::placeholder{
+::placeholder {
   font-size: 18px;
 }
 
-.color-box{
+.color-box {
   display: flex;
   gap: 10px;
   margin-top: 30px;
 }
 
-.purple{
+.purple {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -194,11 +194,11 @@ label{
   cursor: pointer;
 }
 
-.purple:focus{
+.purple:focus {
   border: 1px solid black;
 }
 
-.pink{
+.pink {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -207,11 +207,11 @@ label{
   cursor: pointer;
 }
 
-.pink:focus{
+.pink:focus {
   border: 1px solid black;
 }
 
-.cyan{
+.cyan {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -220,11 +220,11 @@ label{
   cursor: pointer;
 }
 
-.cyan:focus{
+.cyan:focus {
   border: 1px solid black;
 }
 
-.orange{
+.orange {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -233,11 +233,11 @@ label{
   cursor: pointer;
 }
 
-.orange:focus{
+.orange:focus {
   border: 1px solid black;
 }
 
-.darkblue{
+.darkblue {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -246,11 +246,11 @@ label{
   cursor: pointer;
 }
 
-.darkblue:focus{
+.darkblue:focus {
   border: 1px solid black;
 }
 
-.lightblue{
+.lightblue {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -259,11 +259,11 @@ label{
   cursor: pointer;
 }
 
-.lightblue:focus{
-    border: 1px solid black;
+.lightblue:focus {
+  border: 1px solid black;
 }
 
-.create-btn{
+.create-btn {
   width: 120px;
   height: 30px;
   background-color: #001F8B;
@@ -276,7 +276,7 @@ label{
   border: none;
 }
 
-.header{
+.header {
   height: 70px;
   padding: 10px;
   align-items: center;
@@ -285,7 +285,7 @@ label{
   color: white;
 }
 
-.header-circle{
+.header-circle {
   width: 60px;
   height: 60px;
   background-color: #0047FF;
@@ -309,7 +309,7 @@ label{
   width: -webkit-fill-available;
 }
 
-.input-notes{
+.input-notes {
   width: 98%;
   height: 130px;
   border-radius: 9px;
@@ -318,18 +318,18 @@ label{
   padding: 20px;
 }
 
-.input-notes::placeholder{
+.input-notes::placeholder {
   font-size: 25px;
 }
 
-.notesbox{
-   height: 50vh;
-   padding-bottom: 84px;
-   overflow: auto;
-   display: block;
+.notesbox {
+  height: 50vh;
+  padding-bottom: 84px;
+  overflow: auto;
+  display: block;
 }
 
-.notes{
+.notes {
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
   background-color: white;
   padding: 24px 40px;
@@ -344,14 +344,14 @@ label{
   display: block;
 }
 
-.addbtn{
+.addbtn {
   position: absolute;
   bottom: 50px;
   right: 24px;
   cursor: pointer;
 }
 
-.date-time{
+.date-time {
   display: flex;
   justify-content: end;
   gap: 12px;
@@ -360,7 +360,7 @@ label{
   margin-top: 20px;
 }
 
-.home-section{
+.home-section {
   width: 100%;
   height: 100%;
   margin: auto;
@@ -368,7 +368,9 @@ label{
   margin-top: 130px;
 }
 
-
+.back-btn {
+  display: none;
+}
 
 
 
@@ -376,45 +378,52 @@ label{
 
 @media only screen and (max-width: 768px) {
 
-  .home-section{
+  .home-section {
     display: none;
   }
 
-  .sidebar-text{
+  .side-bar {
+    width: 100%;
+    height: 99.5vh;
+    overflow: hidden;
+    background-color: white;
+  }
+
+  .sidebar-text {
     width: 100%;
     padding-left: 60px;
     text-align: left;
   }
 
-  .pop-up{
+  .pop-up {
     width: 280px;
     padding-bottom: 20px;
     border-radius: 12px;
   }
 
-  .popup-title{
+  .popup-title {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 20px;
   }
 
-  label{
+  label {
     font-size: 18px;
     font-weight: 500;
   }
 
-  .input-groupname{
+  .input-groupname {
     width: 153px;
     border-radius: 12px;
     margin-left: 10px;
     padding: 6px;
   }
 
-  ::placeholder{
+  ::placeholder {
     font-size: 15px;
   }
 
-  .color-box{
+  .color-box {
     width: 100%;
     display: flex;
     gap: 5px;
@@ -422,51 +431,117 @@ label{
     margin-right: 10px;
   }
 
-  .color-title{
+  .color-title {
     font-size: 18px;
     font-weight: 500;
     margin-right: 10px;
   }
 
-  .purple{
+  .purple {
     width: 20px;
     height: 20px;
   }
 
-  .pink{
+  .pink {
     width: 20px;
     height: 20px;
   }
 
-  .cyan{
+  .cyan {
     width: 20px;
     height: 20px;
   }
 
-  .orange{
+  .orange {
     width: 20px;
     height: 20px;
   }
 
-  .darkblue{
+  .darkblue {
     width: 20px;
     height: 20px;
   }
 
-  .lightblue{
+  .lightblue {
     width: 20px;
     height: 20px;
   }
 
-  .create-btn{
+  .create-btn {
     width: 200px;
     height: 40px;
     margin: 40px auto;
     border-radius: 6px;
   }
-  .btnbox{
+
+  .btnbox {
     width: 100%;
     display: flex;
   }
 
+  .container {
+    display: block;
+    background-color: #DAE5F5;
+    width: 100%;
+  }
+
+  .back-btn {
+    display: block;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .side-bar.hidden {
+    display: none;
+  }
+
+  .notes-section.hidden {
+    display: none;
+  }
+
+  .header {
+    height: 60px;
+  }
+
+  .notesbox {
+    height: 60vh;
+    padding-bottom: 84px;
+    overflow: auto;
+    display: block;
+  }
+
+  .notes-inputbox {
+    position: absolute;
+    background-color: #001F8B;
+    padding: 12px;
+    margin: 0 auto;
+  }
+
+  .input-notes {
+    width: 93%;
+    height: 100px;
+    border-radius: 9px;
+    outline: none;
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  .input-notes::placeholder {
+    font-size: 18px;
+  }
+
+  .notes {
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    padding: 20px 20px;
+    margin: auto;
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 15px;
+    letter-spacing: 3.5%;
+    line-height: 28.83px;
+    display: block;
+  }
 }

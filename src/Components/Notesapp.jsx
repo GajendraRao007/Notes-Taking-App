@@ -4,6 +4,7 @@ import lockimg from '../Images/lock.png';
 import sendimg from '../Images/Vector.png';
 import disableimg from '../Images/disable.png';
 import bulletimg from '../Images/bullet.png';
+import backimg from '../Images/back.png';
 import { useState } from 'react';
 
 function Notesapp() {
@@ -19,6 +20,9 @@ function Notesapp() {
     const [hideHome, sethideHome] = useState(false);
     const [showSend, setShowSend] = useState(false);
     const [cursorStyle, setCursorStyle] = useState('none');
+    const [sidebarShow, setSidebarShow] = useState(true);
+    const [notesSectionShow, setNotesSectionShow] = useState(true);
+
 
     const groupTitle = (e) => {
         setTitle(e.target.value);
@@ -57,6 +61,11 @@ function Notesapp() {
     function groupClick(groupTitle) {
         setSelectedGroup(groupTitle);
         sethideHome(true);
+
+        if(window.innerWidth <= 768){
+            setSidebarShow(false)
+            setNotesSectionShow(false)
+        }
     }
 
     function notesTextarea(e) {
@@ -64,14 +73,22 @@ function Notesapp() {
         setCursorStyle(newText ? 'pointer' : 'none');
         setShowSend(newText !== "");
         setNoteText(e.target.value);
-
     }
+
+    function toggleSidebar() {
+        setSidebarShow(!sidebarShow);
+    }
+    
+    function toggleNoteSection() {
+        setNotesSectionShow(!notesSectionShow);
+    }
+
 
     return (
         <>
             <div className="container">
 
-                <div className="side-bar">
+                <div className={`side-bar ${sidebarShow ? '' : 'hidden'}`}>
                     <h1 className="sidebar-text">Pocket Notes</h1>
 
                     <div className="scroll">
@@ -99,8 +116,9 @@ function Notesapp() {
                 )}
 
                 {groups.map((group, index) => (
-                    <div key={index} className='notes-section' style={{ display: selectedGroup === group.title ? 'block' : 'none' }}>
+                    <div key={index} className={`notes-section ${notesSectionShow && selectedGroup === groupTitle ? '' : 'hidden'}`} style={{ display: selectedGroup === group.title ? 'block' : 'none' }}>
                         <div className='header'>
+                            <img className='back-btn' src={backimg} alt="" onClick={toggleNoteSection} />
                             <h1 className='circle' style={{ backgroundColor: group.color }}>{group.title.split(' ').map(word => word.charAt(0)).join('').slice(0, 2).toUpperCase()}</h1>
                             <h1 className='notes-title'>{group.title}</h1>
                         </div>
