@@ -116,7 +116,7 @@
 .scroll {
   overflow: auto;
   width: 400px;
-  height: 100vh;
+  height: 85vh;
 }
 
 ::-webkit-scrollbar {

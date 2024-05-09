@@ -74,13 +74,16 @@ function Notesapp() {
         setShowSend(newText !== "");
         setNoteText(e.target.value);
     }
-
-    function toggleSidebar() {
-        setSidebarShow(!sidebarShow);
-    }
     
-    function toggleNoteSection() {
-        setNotesSectionShow(!notesSectionShow);
+    function backButton() {
+        setSelectedGroup(null); 
+        setNotesSectionShow(false); 
+        sethideHome(false); 
+        setSidebarShow(true); 
+    
+        if (window.innerWidth <= 768) {
+            setSidebarShow(true); 
+        }
     }
 
 
@@ -118,7 +121,7 @@ function Notesapp() {
                 {groups.map((group, index) => (
                     <div key={index} className={`notes-section ${notesSectionShow && selectedGroup === groupTitle ? '' : 'hidden'}`} style={{ display: selectedGroup === group.title ? 'block' : 'none' }}>
                         <div className='header'>
-                            <img className='back-btn' src={backimg} alt="" onClick={toggleNoteSection} />
+                            <img className='back-btn' src={backimg} alt="" onClick={backButton} />
                             <h1 className='circle' style={{ backgroundColor: group.color }}>{group.title.split(' ').map(word => word.charAt(0)).join('').slice(0, 2).toUpperCase()}</h1>
                             <h1 className='notes-title'>{group.title}</h1>
                         </div>
