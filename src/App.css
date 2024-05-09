@@ -14,6 +14,7 @@
   z-index: 10;
 }
 
+/* Side Bar Css */
 
 .side-bar {
   width: 541px;
@@ -33,12 +34,28 @@
   background-color: #ffffff;
 }
 
+.scroll {
+  overflow: auto;
+  width: 400px;
+  height: 85vh;
+}
+
 .addnotes-btn {
   width: 70px;
   position: fixed;
   top: 84%;
   left: 290px;
   cursor: pointer;
+}
+
+/* Home Section Css */
+
+.home-section {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 130px;
 }
 
 .notes-section {
@@ -78,6 +95,77 @@
   font-weight: 400;
 }
 
+/* Notes Section Css */
+
+.header {
+  height: 70px;
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  background-color: #001F8B;
+  color: white;
+}
+
+.header-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #0047FF;
+  color: white;
+  border-radius: 100%;
+  font-size: 23px;
+  display: block;
+  line-height: 60px;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.notes-inputbox {
+  position: absolute;
+  background-color: #001F8B;
+  padding: 30px;
+  bottom: 0;
+  width: -webkit-fill-available;
+}
+
+.input-notes {
+  width: 98%;
+  height: 130px;
+  border-radius: 9px;
+  outline: none;
+  font-size: 18px;
+  padding: 15px;
+  resize: none;
+}
+
+.input-notes::placeholder {
+  font-size: 25px;
+}
+
+.notesbox {
+  height: 50vh;
+  padding-bottom: 84px;
+  overflow: auto;
+  display: block;
+}
+
+.notes {
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  padding: 24px 40px;
+  margin: auto;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 20px;
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 3.5%;
+  line-height: 28.83px;
+  display: block;
+}
+
 .notes-title-box {
   display: flex;
   align-items: center;
@@ -112,11 +200,20 @@
   font-weight: 500;
 }
 
+.addbtn {
+  position: absolute;
+  bottom: 50px;
+  right: 45px;
+  cursor: pointer;
+}
 
-.scroll {
-  overflow: auto;
-  width: 400px;
-  height: 85vh;
+.date-time {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  font-weight: 500;
+  color: #353535;
+  margin-top: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -133,6 +230,7 @@
   border-radius: 5.5px;
 }
 
+/* Popup Css */
 
 .pop-up {
   width: 500px;
@@ -276,97 +374,6 @@ label {
   border: none;
 }
 
-.header {
-  height: 70px;
-  padding: 10px;
-  align-items: center;
-  display: flex;
-  background-color: #001F8B;
-  color: white;
-}
-
-.header-circle {
-  width: 60px;
-  height: 60px;
-  background-color: #0047FF;
-  color: white;
-  border-radius: 100%;
-  font-size: 23px;
-  display: block;
-  line-height: 60px;
-  align-items: center;
-  text-align: center;
-  font-weight: 500;
-  margin-right: 25px;
-  margin-left: 25px;
-}
-
-.notes-inputbox {
-  position: absolute;
-  background-color: #001F8B;
-  padding: 30px;
-  bottom: 0;
-  width: -webkit-fill-available;
-}
-
-.input-notes {
-  width: 98%;
-  height: 130px;
-  border-radius: 9px;
-  outline: none;
-  font-size: 18px;
-  padding: 20px;
-}
-
-.input-notes::placeholder {
-  font-size: 25px;
-}
-
-.notesbox {
-  height: 50vh;
-  padding-bottom: 84px;
-  overflow: auto;
-  display: block;
-}
-
-.notes {
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
-  background-color: white;
-  padding: 24px 40px;
-  margin: auto;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-top: 20px;
-  text-align: left;
-  font-size: 18px;
-  letter-spacing: 3.5%;
-  line-height: 28.83px;
-  display: block;
-}
-
-.addbtn {
-  position: absolute;
-  bottom: 50px;
-  right: 24px;
-  cursor: pointer;
-}
-
-.date-time {
-  display: flex;
-  justify-content: end;
-  gap: 12px;
-  font-weight: 500;
-  color: #353535;
-  margin-top: 20px;
-}
-
-.home-section {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  text-align: center;
-  margin-top: 130px;
-}
 
 .back-btn {
   display: none;
@@ -543,5 +550,12 @@ label {
     letter-spacing: 3.5%;
     line-height: 28.83px;
     display: block;
+  }
+
+  .addbtn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
   }
 }
