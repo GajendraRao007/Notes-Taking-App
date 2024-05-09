@@ -50,9 +50,23 @@ function Notesapp() {
 
     function addNote() {
         if (noteText.trim() !== "") {
+            const currentDate = new Date().toLocaleDateString("en-GB", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+            });
+            const currentTime = new Date().toLocaleTimeString("en-US", {
+                hour: "numeric",
+                minute: "numeric",
+                hour12: true,
+            });
             const updatedGroupContent = {
                 ...groupContent,
-                [selectedGroup]: [...(groupContent[selectedGroup] || []), noteText]
+                [selectedGroup]: [...(groupContent[selectedGroup] || []), {
+                    note: noteText,
+                    date: currentDate,
+                    time: currentTime
+                }]
             };
             setGroupContent(updatedGroupContent);
             setNoteText("");
@@ -64,7 +78,7 @@ function Notesapp() {
         setSelectedGroup(groupTitle);
         sethideHome(true);
 
-        if(window.innerWidth <= 768){
+        if (window.innerWidth <= 768) {
             setSidebarShow(false)
             setNotesSectionShow(false)
         }
@@ -76,15 +90,15 @@ function Notesapp() {
         setShowSend(newText !== "");
         setNoteText(e.target.value);
     }
-    
+
     function backButton() {
-        setSelectedGroup(null); 
-        setNotesSectionShow(false); 
-        sethideHome(false); 
-        setSidebarShow(true); 
-    
+        setSelectedGroup(null);
+        setNotesSectionShow(false);
+        sethideHome(false);
+        setSidebarShow(true);
+
         if (window.innerWidth <= 768) {
-            setSidebarShow(true); 
+            setSidebarShow(true);
         }
     }
 
@@ -100,11 +114,11 @@ function Notesapp() {
         localStorage.setItem('groups', JSON.stringify(updatedGroups));
         localStorage.setItem('groupContent', JSON.stringify(updatedGroupContent));
     }
-   
+
     return (
         <>
             <div className="container">
-                
+
                 {/* sidebar */}
                 <div className={`side-bar ${sidebarShow ? '' : 'hidden'}`}>
                     <h1 className="sidebar-text">Pocket Notes</h1>
@@ -120,7 +134,7 @@ function Notesapp() {
 
                 <img className="addnotes-btn" onClick={addButton} src={addNotesButton} alt="" srcSet="" />
 
-                 {/* Home*/}
+                {/* Home*/}
                 {hideHome ? null : (
                     <div className="home-section">
                         <img className='bg-img' src={backgroundimg} alt="" />
@@ -147,13 +161,13 @@ function Notesapp() {
                         <div className='notesbox'>
                             {groupContent[group.title] && groupContent[group.title].map((note, index) => (
                                 <div key={index} className='notes'>
-                                    <p className='txt'>{note}</p>
+                                    <p className='txt'>{note.note}</p>
                                     <div className='date-time'>
-                                        <p>9 Mar 2023</p>
+                                        <p>{note.date}</p>
                                         <div>
                                             <img src={bulletimg} alt="" />
                                         </div>
-                                        <p>10:10 AM</p>
+                                        <p>{note.time}</p>
                                     </div>
                                 </div>
                             ))}
@@ -187,7 +201,7 @@ function Notesapp() {
                                 <button className='lightblue' onClick={() => colorChange("#6691FF")}></button>
                             </div>
                             <div className='btnbox'>
-                            <button className='create-btn' onClick={createGroup}>Create</button>
+                                <button className='create-btn' onClick={createGroup}>Create</button>
                             </div>
                         </div>
                     </div>
